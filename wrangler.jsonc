@@ -1,0 +1,10 @@
+{
+  // Static assets worker served at fbads.fun. Production deploy (main) and branch Previews both read this file.
+  "name": "fbads",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist"
+  },
+  // Required by `npx wrangler preview` for non-production branches; empty = same settings as production.
+  "previews": {}
+}
