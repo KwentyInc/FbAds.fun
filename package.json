@@ -1,6 +1,7 @@
 {
   "name": "parseraccs",
   "version": "261002b1",
+  "appVersion": "1.1",
   "private": true,
   "scripts": {
     "build:payload": "node scripts/build-payload.cjs",

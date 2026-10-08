@@ -61,7 +61,8 @@
 </div>
 <script>
 var MODULES=['i18n.js','styles.js','accounts.js','modal.js','rules.js','bindings.js'];
-var ALL=MODULES.concat(['clone.js']);
+var CLONE_PARTS=['clone.js','clone.2.js','clone.3.js'];
+var ALL=MODULES.concat(CLONE_PARTS);
 var SRC={};var lang='ru';
 function el(id){return document.getElementById(id);}
 function setStatus(t,cls){var s=el('status');s.textContent=t;s.className=cls||'';}
@@ -72,7 +73,7 @@ function cur(){return lang==='en'?window.__code_en:window.__code_ru;}
 function applyLang(){var a=el('bm');if(window.__code_ru){a.href=cur();a.classList.remove('loading');a.textContent='📌 ParserAccs ('+lang.toUpperCase()+')';}el('lang').textContent='🌐 '+(lang==='ru'?'EN':'RU');}
 function build(){
   if(!haveAll()){setStatus('✗ не все модули загружены — выбери источник','err');return;}
-  var clone=SRC['clone.js'];
+  var clone=CLONE_PARTS.map(function(m){return SRC[m];}).join('\n');
   var M='/*__SECTION_LATE__*/';
   var li=clone.indexOf(M);
   var early=li>=0?clone.slice(0,li):clone;
@@ -83,7 +84,7 @@ function build(){
   var warn=[];
   if(modal.indexOf(PE)>=0){modal=modal.split(PE).join(early);}else{warn.push('modal.js: нет маркера __PA_CLONE_EARLY__ (clone не вшит в showModal)');}
   if(bindings.indexOf(PL)>=0){bindings=bindings.split(PL).join(late);}else{warn.push('bindings.js: нет маркера __PA_CLONE_LATE__ (биндинги clone не вшиты)');}
-  var joined=[SRC['i18n.js'],SRC['styles.js'],SRC['accounts.js'],modal,SRC['rules.js'],bindings].join('\n').replace(/^\uFEFF/,'').trim();
+  var joined=['var PA_VERSION="dev",PA_BUILD="local",PA_BUILD_LABEL="local build";',SRC['i18n.js'],SRC['styles.js'],SRC['accounts.js'],modal,SRC['rules.js'],bindings].join('\n').replace(/^\uFEFF/,'').trim();
   var src='javascript:'+joined;
   window.__code_ru=src;
   window.__code_en='javascript:var PA_LANG="en";'+joined;
