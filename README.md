@@ -16,7 +16,9 @@
 
 ---
 
-![ParserAccs — список рекламных кабинетов](preview.jpg)
+![ParserAccs — список рекламных кабинетов](docs/screenshots/accounts.svg)
+
+<sub>Скриншоты сделаны на демо-данных: названия, ID и суммы вымышленные.</sub>
 
 ParserAccs запускается прямо на странице Ads Manager и собирает рабочие инструменты в одном интерфейсе:
 
@@ -65,7 +67,9 @@ ParserAccs запускается прямо на странице Ads Manager �
 - экспорт выбранных строк в CSV для Excel;
 - обновление данных без закрытия окна.
 
-![Пересчёт трат без закрытия таблицы](recount.png)
+При смене периода траты пересчитываются прямо поверх таблицы — окно закрывать не нужно:
+
+![Пересчёт трат без закрытия таблицы](docs/screenshots/recount.svg)
 
 ### ⚙️ AutoRules
 
@@ -82,7 +86,7 @@ ParserAccs запускается прямо на странице Ads Manager �
 
 > Время в правилах `SCHEDULED` не сдвигается автоматически: переходы на летнее время делают фиксированное смещение небезопасным. Разница часовых поясов выводится в лог для ручной проверки.
 
-<img src="auto-rules.png" alt="ParserAccs AutoRules" width="820">
+<img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820">
 
 ### 🧬 CloneAds — beta
 
@@ -99,6 +103,8 @@ ParserAccs запускается прямо на странице Ads Manager �
 - остановка операции, лог ошибок и защита от повторной обработки уже завершённых пар.
 
 > **Рекомендуется:** оставляйте кампанию в статусе `PAUSED`, используйте draft и проверяйте кампанию, адсеты, страницы, пиксели, плейсменты, бюджеты и креативы в Ads Manager перед запуском. CloneAds экспериментальный: некоторые форматы и ограничения конкретного кабинета могут потребовать ручной доработки.
+
+<img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820">
 
 ## 🔐 Безопасность
 
@@ -195,5 +201,11 @@ ParserAccs is a bookmarklet for Facebook Ads Manager with three modules:
 Install it from **[fbads.fun](https://fbads.fun)** by dragging the ParserAccs button to the bookmarks bar. The installed bookmark uses a self-updating, SHA-256-verified loader, so it does not need to be reinstalled after every release.
 
 CloneAds writes through the Graph API. Keep cloned campaigns **PAUSED**, use draft mode and review every result in Ads Manager before launch.
+
+| Accounts | AutoRules | CloneAds |
+|---|---|---|
+| <img src="docs/screenshots/accounts-en.svg" alt="Accounts" width="300"> | <img src="docs/screenshots/autorules.svg" alt="AutoRules" width="300"> | <img src="docs/screenshots/cloneads.svg" alt="CloneAds" width="300"> |
+
+Screenshots use demo data (fictional names, IDs and amounts).
 
 See [HOSTING.md](HOSTING.md) for build and deployment details.

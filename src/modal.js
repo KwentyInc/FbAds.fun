@@ -883,7 +883,7 @@
         note.innerHTML =
           t('recalc_pre') +
           '<span id="fb-fl" style="color:#2dd4bf;">' +
-          fLabel() +
+          fLabel +
           '</span>' +
           t('recalc_suf');
       if (!target.length) {
