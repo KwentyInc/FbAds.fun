@@ -42,6 +42,7 @@ const replacement=`/* ===== Стабильный self-updating loader ===== */\n
 landing=landing.slice(0,a)+replacement+landing.slice(b);
 write(path.join(DIST,"index.html"),landing);
 for(const file of ["preview.jpg","auto-rules.png","recount.png","ethereum.svg","tron.svg","qr-erc.png","qr-trc.png","LICENSE"]){const src=path.join(ROOT,file);if(fs.existsSync(src))fs.copyFileSync(src,path.join(DIST,file))}
+{const sd=path.join(ROOT,"docs","screenshots");if(fs.existsSync(sd)){const dd=path.join(DIST,"docs","screenshots");fs.mkdirSync(dd,{recursive:true});for(const f of fs.readdirSync(sd))fs.copyFileSync(path.join(sd,f),path.join(dd,f))}}
 write(path.join(DIST,"_headers"),"/\n  Cache-Control: no-store\n\n/parseraccs/*\n  Access-Control-Allow-Origin: *\n  Cache-Control: no-store\n");
 write(path.join(DIST,"_redirects"),"/ /index.html 200\n");
 console.log(`ParserAccs ${build} packaged: ${chunks.length} OG chunk(s).`);console.log("Manual Facebook scrape URLs:");packageInfo.manualScrapeUrls.forEach(x=>console.log(`- ${x}`));
