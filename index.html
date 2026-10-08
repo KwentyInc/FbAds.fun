@@ -531,107 +531,28 @@ try{(function(){
 })();}catch(e){}
 
 /* ===== ГИБРИДНАЯ СБОРКА букмарклета из модулей src/ ===== */
-var MODULES=['i18n.js','styles.js','accounts.js','modal.js','rules.js','clone.js','bindings.js'];
-var BASE='https://cdn.jsdelivr.net/gh/Kw3nty/ParserAccs@main/src/';
-
-function hashStr(s){var h=5381;for(var i=0;i<s.length;i++){h=((h<<5)+h)^s.charCodeAt(i);h|=0;}return (h>>>0).toString(16).padStart(8,'0');}
-
+/* Копия лендинга вне fbads.fun (например GitHub Pages) берёт тот же self-updating loader,
+   что и продакшн: из https://fbads.fun/parseraccs/latest/tool-meta.json. Никакой сборки из src/ через CDN.
+   На fbads.fun этот блок заменяется scripts/package-release.cjs. */
+var PA_META_URL='https://fbads.fun/parseraccs/latest/tool-meta.json';
 function buildBookmarklet(){
-  var link=document.getElementById('bm-link'),
-      copy=document.getElementById('bm-copy'),
-      warn=document.getElementById('warn'),
-      drag=document.querySelector('.drag-hint'),
-      status=document.getElementById('build-status'),
-      version=document.getElementById('build-version'),
-      rebuild=document.getElementById('bm-rebuild');
-
-  link.classList.add('loading');
-  link.href='javascript:void(0)';
-  link.textContent='⏳ …';
-  link.style.filter='';
-  if(status){status.className='loading';status.textContent=(siteLang==='en'?'⏳ Building from '+MODULES.length+' modules…':'⏳ Собираю из '+MODULES.length+' модулей…');}
-  if(version)version.textContent='';
-  if(drag)drag.style.display='flex';
-  if(warn)warn.style.display='none';
-  if(copy)copy.disabled=true;
-  if(rebuild)rebuild.disabled=true;
-
-  var ts=Date.now();
-  Promise.all(MODULES.map(function(m){
-    return fetch(BASE+m+'?v='+ts).then(function(r){
-      if(!r.ok)throw new Error(m+' → HTTP '+r.status);
-      return r.text();
-    });
-  })).then(function(txts){
-    var joined=txts.join('\n').replace(/^\uFEFF/,'').trim();
-    var src;
-    if(joined.indexOf('javascript:')===0) src=joined;
-    else src='javascript:'+joined;
-
-    window.__pa_code_ru=src;
-    window.__pa_code_en=src.replace(/^javascript:/,'javascript:var PA_LANG="en";');
-    window.__pa_cur_code=(siteLang==='en')?window.__pa_code_en:window.__pa_code_ru;
-
-    link.href=window.__pa_cur_code;
-    link.classList.remove('loading');
-    link.textContent='📌 ParserAccs';
-    link.title=(siteLang==='en'?'Drag me to your bookmarks bar':'Перетащи меня на панель закладок');
-    link.style.filter='';
-
-    var hv=hashStr(src).slice(0,6);
-    var kb=Math.round(src.length/1024);
-    if(status){status.className='ready';status.textContent=(siteLang==='en'?'✓ Ready':'✓ Готово');}
-    if(version)version.textContent='build · '+hv+' · '+kb+'KB';
-    if(copy)copy.disabled=false;
-    if(rebuild)rebuild.disabled=false;
-
-    /* ===== QR zoom: клик для увеличения ===== */
-try{(function(){
-  document.querySelectorAll('.donate-qr').forEach(function(img){
-    img.addEventListener('click',function(e){
-      e.stopPropagation();
-      var zoomed=this.classList.contains('zoomed');
-      document.querySelectorAll('.donate-qr.zoomed').forEach(function(q){q.classList.remove('zoomed');});
-      if(!zoomed)this.classList.add('zoomed');
-    });
-  });
-  document.addEventListener('click',function(e){
-    if(!e.target.classList.contains('donate-qr')){
-      document.querySelectorAll('.donate-qr.zoomed').forEach(function(q){q.classList.remove('zoomed');});
-    }
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){document.querySelectorAll('.donate-qr.zoomed').forEach(function(q){q.classList.remove('zoomed');});}
-  });
-})();}catch(e){}
-
-/* ===== QR lightbox: клик — большое окно ===== */
-try{(function(){
-  function paOpenQr(src,alt){
-    var old=document.querySelector('.pa-qr-lb');if(old)old.remove();
-    var ov=document.createElement('div');ov.className='pa-qr-lb';
-    var im=document.createElement('img');im.src=src;im.alt=alt||'QR';
-    ov.appendChild(im);
-    ov.addEventListener('click',function(){ov.remove();});
-    var h=function(e){if(e.key==='Escape'){ov.remove();document.removeEventListener('keydown',h);}};
-    document.addEventListener('keydown',h);
-    document.body.appendChild(ov);
-  }
-  document.querySelectorAll('.donate-qr').forEach(function(img){
-    img.addEventListener('click',function(e){e.stopPropagation();paOpenQr(img.currentSrc||img.src,img.alt);});
-  });
-})();}catch(e){}
-
-applyLanguage(siteLang,false);
+  var link=document.getElementById('bm-link'),copy=document.getElementById('bm-copy'),warn=document.getElementById('warn'),drag=document.querySelector('.drag-hint'),status=document.getElementById('build-status'),version=document.getElementById('build-version'),rebuild=document.getElementById('bm-rebuild');
+  link.classList.add('loading');link.href='javascript:void(0)';link.textContent='⏳ …';
+  if(status){status.className='loading';status.textContent=siteLang==='en'?'⏳ Loading loader…':'⏳ Загружаю loader…';}
+  if(copy)copy.disabled=true;if(rebuild)rebuild.disabled=true;
+  fetch(PA_META_URL+'?v='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}).then(function(meta){
+    if(!meta||!meta.bookmarkletHref)throw new Error('tool-meta.json без bookmarkletHref');
+    window.__pa_code_ru=meta.bookmarkletHref;window.__pa_code_en=meta.bookmarkletHrefEn||meta.bookmarkletHref;
+    window.__pa_cur_code=siteLang==='en'?window.__pa_code_en:window.__pa_code_ru;
+    link.href=window.__pa_cur_code;link.classList.remove('loading');link.textContent='📌 ParserAccs';
+    link.title=siteLang==='en'?'Drag me to your bookmarks bar':'Перетащи меня на панель закладок';link.style.filter='';
+    if(status){status.className='ready';status.textContent=siteLang==='en'?'✓ Loader ready':'✓ Loader готов';}
+    if(version)version.textContent='build · '+(meta.build||'?')+' · loader';
+    if(drag)drag.style.display='flex';if(warn)warn.style.display='none';if(copy)copy.disabled=false;if(rebuild)rebuild.disabled=false;
+    if(typeof applyLanguage==='function')applyLanguage(siteLang,false);
   }).catch(function(e){
-    link.classList.remove('loading');
-    link.textContent='📌 ParserAccs';
-    link.style.filter='grayscale(.5) brightness(.85)';
-    if(drag)drag.style.display='none';
-    if(status){status.className='error';status.textContent=(siteLang==='en'?'✗ Error: '+e.message:'✗ Ошибка: '+e.message);}
-    if(version)version.textContent=(siteLang==='en'?'try "🔁 Rebuild" in 1–2 min':'нажми «🔁 Пересобрать» через 1–2 мин');
-    if(warn){warn.style.display='block';var m=warn.querySelector('.pa-wmsg');if(m)m.textContent=(siteLang==='en'?'Bookmarklet code failed to load.':'Код букмарклета не подгрузился.');}
-    if(copy)copy.disabled=true;
+    link.classList.remove('loading');link.textContent='⚠ ParserAccs';
+    if(status){status.className='err';status.textContent=(siteLang==='en'?'✗ Could not load loader: ':'✗ Не удалось загрузить loader: ')+e.message+' — fbads.fun';}
     if(rebuild)rebuild.disabled=false;
   });
 }
