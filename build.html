@@ -85,9 +85,9 @@ function build(){
   if(modal.indexOf(PE)>=0){modal=modal.split(PE).join(early);}else{warn.push('modal.js: нет маркера __PA_CLONE_EARLY__ (clone не вшит в showModal)');}
   if(bindings.indexOf(PL)>=0){bindings=bindings.split(PL).join(late);}else{warn.push('bindings.js: нет маркера __PA_CLONE_LATE__ (биндинги clone не вшиты)');}
   var joined=['var PA_VERSION="dev",PA_BUILD="local",PA_BUILD_LABEL="local build";',SRC['i18n.js'],SRC['styles.js'],SRC['accounts.js'],modal,SRC['rules.js'],bindings].join('\n').replace(/^\uFEFF/,'').trim();
-  var src='javascript:'+joined;
+  var src='javascript:'+encodeURIComponent(joined);
   window.__code_ru=src;
-  window.__code_en='javascript:var PA_LANG="en";'+joined;
+  window.__code_en='javascript:'+encodeURIComponent('var PA_LANG="en";'+joined);
   applyLang();
   el('out').value=cur();
   el('rebuild').disabled=false;el('copy').disabled=false;
