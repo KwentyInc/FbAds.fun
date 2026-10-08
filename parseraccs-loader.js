@@ -178,6 +178,16 @@
     const graphUrls = getGraphUrls(accessToken);
     return fetchJson(graphUrls.objectById(id));
   };
+  // Ask Facebook to re-scrape the URL so its OG cache serves the latest build, not a stale copy.
+  const rescrapeUrl = async (graphUrls, url) => {
+    try {
+      const scraped = await fetchJson(graphUrls.scrapeByUrl(url), { method: "POST", credentials: "omit" });
+      return scraped?.id ? String(scraped.id) : "";
+    } catch (error) {
+      console.warn(`[${loaderConfig.app} loader] Re-scrape failed for ${url}; using Facebook cache.`, error);
+      return "";
+    }
+  };
   const resolveOgObjectIdByUrl = async (url) => {
     if (!url) {
       throw new Error("No manifest URL configured.");
@@ -187,6 +197,10 @@
       throw new Error("Cannot find Ads Manager access_token in current page runtime.");
     }
     const graphUrls = getGraphUrls(accessToken);
+    const scrapedId = await rescrapeUrl(graphUrls, url);
+    if (scrapedId) {
+      return scrapedId;
+    }
     const resolved = await fetchJson(graphUrls.ogByUrl(url));
     const ogObjectId = resolved?.og_object?.id;
     if (!ogObjectId) {
