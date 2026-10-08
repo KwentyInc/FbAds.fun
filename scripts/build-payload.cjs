@@ -7,11 +7,17 @@ const SRC=path.join(ROOT,"src");
 const OUT=path.join(ROOT,"parseraccs.js");
 const order=["i18n.js","styles.js","accounts.js","modal.js","rules.js","bindings.js"];
 const read=(name)=>fs.readFileSync(path.join(SRC,name),"utf8");
-function assemble(){
+// CloneAds source = src/clone.js + src/clone.2.js + src/clone.3.js ... (numeric order)
+function readClone(){
   const clonePath=path.join(SRC,"clone.js");
+  if(!fs.existsSync(clonePath)) return null;
+  const extra=fs.readdirSync(SRC).filter(n=>/^clone\.\d+\.js$/.test(n)).sort((a,b)=>parseInt(a.split(".")[1],10)-parseInt(b.split(".")[1],10));
+  return [fs.readFileSync(clonePath,"utf8")].concat(extra.map(n=>read(n))).join("\n");
+}
+function assemble(){
   let modal=read("modal.js"), bindings=read("bindings.js");
-  if(fs.existsSync(clonePath)){
-    const clone=fs.readFileSync(clonePath,"utf8");
+  const clone=readClone();
+  if(clone!==null){
     const split="/*__SECTION_LATE__*/", earlyMark="/*__PA_CLONE_EARLY__*/", lateMark="/*__PA_CLONE_LATE__*/";
     const at=clone.indexOf(split);
     const early=(at>=0?clone.slice(0,at):clone).replace("/*__SECTION_EARLY__*/","");
