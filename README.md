@@ -1,10 +1,12 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,50:1e3a8a,100:2dd4bf&height=190&section=header&text=ParserAccs&fontSize=64&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Facebook%20Ads%20Manager%20toolkit&descAlignY=58&descSize=18" width="100%" alt="ParserAccs">
+
 [🇷🇺 Русский] | [🇺🇸 English](README_EN.md)
 
 <a href="https://fbads.fun"><img src="docs/screenshots/accounts.svg" alt="ParserAccs" width="100%" style="border-radius: 8px;"></a>
 
-# ParserAccs
+<a href="https://fbads.fun"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2DD4BF&center=true&vCenter=true&width=640&lines=%D0%A1%D0%B2%D0%BE%D0%B4%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D0%B2%D1%81%D0%B5%D0%BC%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0%D0%BC%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%BA%D0%BD%D0%B5;%D0%9F%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0%D0%BC%D0%B8;%D0%9A%D0%BB%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%B7%D0%B0%20%D0%BF%D0%B0%D1%80%D1%83%20%D0%BA%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2;%D0%91%D0%B5%D0%B7%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8" alt="typing"></a>
 
 **Одна закладка для массовой работы с Facebook Ads Manager**
 
@@ -13,6 +15,10 @@
 [![Website](https://img.shields.io/badge/Website-fbads.fun-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://fbads.fun)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Language](https://img.shields.io/badge/Language-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+
+[![Stars](https://img.shields.io/github/stars/KwentyInc/ParserAccs?style=for-the-badge&logo=github&color=2dd4bf)](https://github.com/KwentyInc/ParserAccs/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/KwentyInc/ParserAccs?style=for-the-badge&color=3b8cff)](https://github.com/KwentyInc/ParserAccs/commits/main)
+[![CI](https://img.shields.io/github/actions/workflow/status/KwentyInc/ParserAccs/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/KwentyInc/ParserAccs/actions/workflows/ci.yml)
 
 </div>
 
@@ -94,6 +100,10 @@ ParserAccs запускается прямо в Ads Manager и собирает 
 > Оставляйте кампании на `PAUSED`, используйте черновик и проверяйте результат в Ads Manager перед запуском. CloneAds — экспериментальный модуль: некоторые форматы могут потребовать ручной доработки.
 
 <a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820" style="border-radius: 8px;"></a>
+
+## 🧰 Стек
+
+<p align="center"><img src="https://skillicons.dev/icons?i=js,html,css,nodejs,cloudflare,githubactions&theme=dark" alt="stack"></p>
 
 ## 🔐 Безопасность
 
@@ -182,6 +192,12 @@ src/bindings.js   события, таблица и экспорт
 >
 > 📱 QR-коды — в разделе [«Донат» на fbads.fun](https://fbads.fun/#donate). Спасибо! 🙏
 
+## ⭐ История звёзд
+
+<a href="https://star-history.com/#KwentyInc/ParserAccs&Date"><img src="https://api.star-history.com/svg?repos=KwentyInc/ParserAccs&type=Date&theme=dark" alt="Star History" width="640"></a>
+
 ## 📄 Лицензия
 
 [MIT](LICENSE) · Автор: [Kwenty](https://t.me/kw33nty)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2dd4bf,50:1e3a8a,100:0b1220&height=110&section=footer" width="100%" alt="">

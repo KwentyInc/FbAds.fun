@@ -1,10 +1,12 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,50:1e3a8a,100:2dd4bf&height=190&section=header&text=ParserAccs&fontSize=64&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Facebook%20Ads%20Manager%20toolkit&descAlignY=58&descSize=18" width="100%" alt="ParserAccs">
+
 [🇷🇺 Русский](README.md) | [🇺🇸 English]
 
 <a href="https://fbads.fun"><img src="docs/screenshots/accounts-en.svg" alt="ParserAccs" width="100%" style="border-radius: 8px;"></a>
 
-# ParserAccs
+<a href="https://fbads.fun"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2DD4BF&center=true&vCenter=true&width=640&lines=All%20ad%20accounts%20in%20one%20window;Transfer%20automated%20rules%20between%20accounts;Clone%20campaigns%20in%20a%20few%20clicks;No%20extensions%2C%20no%20installs" alt="typing"></a>
 
 **One bookmark for bulk work in Facebook Ads Manager**
 
@@ -13,6 +15,10 @@ Accounts overview · CSV · AutoRules · CloneAds
 [![Website](https://img.shields.io/badge/Website-fbads.fun-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://fbads.fun)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Language](https://img.shields.io/badge/Language-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+
+[![Stars](https://img.shields.io/github/stars/KwentyInc/ParserAccs?style=for-the-badge&logo=github&color=2dd4bf)](https://github.com/KwentyInc/ParserAccs/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/KwentyInc/ParserAccs?style=for-the-badge&color=3b8cff)](https://github.com/KwentyInc/ParserAccs/commits/main)
+[![CI](https://img.shields.io/github/actions/workflow/status/KwentyInc/ParserAccs/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/KwentyInc/ParserAccs/actions/workflows/ci.yml)
 
 </div>
 
@@ -94,6 +100,10 @@ Clones selected campaigns from a donor account into one or more target accounts.
 > Keep campaigns `PAUSED`, use draft mode and review everything in Ads Manager before launch. CloneAds is experimental: some formats may need manual fixes.
 
 <a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820" style="border-radius: 8px;"></a>
+
+## 🧰 Tech stack
+
+<p align="center"><img src="https://skillicons.dev/icons?i=js,html,css,nodejs,cloudflare,githubactions&theme=dark" alt="stack"></p>
 
 ## 🔐 Security
 
@@ -182,6 +192,12 @@ src/bindings.js   events, table and export
 >
 > 📱 QR codes are in the [Donate section on fbads.fun](https://fbads.fun/#donate). Thank you! 🙏
 
+## ⭐ Star history
+
+<a href="https://star-history.com/#KwentyInc/ParserAccs&Date"><img src="https://api.star-history.com/svg?repos=KwentyInc/ParserAccs&type=Date&theme=dark" alt="Star History" width="640"></a>
+
 ## 📄 License
 
 [MIT](LICENSE) · Author: [Kwenty](https://t.me/kw33nty)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2dd4bf,50:1e3a8a,100:0b1220&height=110&section=footer" width="100%" alt="">
