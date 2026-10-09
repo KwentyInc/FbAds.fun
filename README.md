@@ -155,7 +155,7 @@ https://fbads.fun/parseraccs/latest/manifest
 https://fbads.fun/parseraccs/latest/og/chunk-001
 ```
 
-Подробнее — в [HOSTING.md](HOSTING.md).
+Подробнее — в [HOSTING.md](docs/HOSTING.md).
 
 ### Структура исходников
 

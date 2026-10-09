@@ -155,7 +155,7 @@ https://fbads.fun/parseraccs/latest/manifest
 https://fbads.fun/parseraccs/latest/og/chunk-001
 ```
 
-More details in [HOSTING.md](HOSTING.md).
+More details in [HOSTING.md](docs/HOSTING.md).
 
 ### Source layout
 

@@ -8,7 +8,7 @@
     "check:payload": "node scripts/build-payload.cjs --check",
     "package": "node scripts/package-release.cjs",
     "build": "npm run build:payload && npm run package",
-    "check": "npm run build:payload && node --check parseraccs.js && node --check parseraccs-loader.js && node --check scripts/package-release.cjs"
+    "check": "npm run build:payload && node --check parseraccs.js && node --check src/loader.js && node --check scripts/package-release.cjs"
   },
   "devDependencies": {}
 }

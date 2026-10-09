@@ -7,7 +7,7 @@ const ROOT=path.resolve(__dirname,"..");
 const DIST=path.join(ROOT,"dist");
 const OUT=path.join(DIST,"parseraccs");
 const SOURCE=path.join(ROOT,"parseraccs.js");
-const LOADER=path.join(ROOT,"parseraccs-loader.js");
+const LOADER=path.join(ROOT,"src","loader.js");
 const BASE="https://fbads.fun/parseraccs";
 const CHUNK_SIZE=350000;
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -34,14 +34,15 @@ const hrefFor=lang=>`javascript:${encodeURIComponent(loaderFor(lang))}`;
 const packageInfo={...manifest,latestManifestUrl:pretty("latest/manifest.html"),manualScrapeUrls:[pretty("latest/manifest.html"),...manifest.chunks.map(x=>x.latestUrl)]};
 write(path.join(buildDir,"package-info.json"),JSON.stringify(packageInfo,null,2)+"\n");write(path.join(latestDir,"package-info.json"),JSON.stringify(packageInfo,null,2)+"\n");
 write(path.join(latestDir,"tool-meta.json"),JSON.stringify({app:"ParserAccs",title:"ParserAccs",build,version:build,landingUrl:"https://fbads.fun/",sourceUrl:"https://github.com/Kw3nty/ParserAccs",bookmarkletHref:hrefFor("ru"),bookmarkletHrefEn:hrefFor("en"),latestManifestUrl:packageInfo.latestManifestUrl,generatedAt:manifest.generatedAt},null,2)+"\n");
-let landing=fs.readFileSync(path.join(ROOT,"index.html"),"utf8");
+let landing=fs.readFileSync(path.join(ROOT,"site","index.html"),"utf8");
 const marker="/* ===== ГИБРИДНАЯ СБОРКА букмарклета из модулей src/ ===== */";
 const init="/* ===== инициализация ===== */";
 const a=landing.indexOf(marker),b=landing.indexOf(init,a);if(a<0||b<0)throw new Error("Landing build markers missing");
 const replacement=`/* ===== Стабильный self-updating loader ===== */\nwindow.__pa_code_ru=${JSON.stringify(hrefFor("ru"))};\nwindow.__pa_code_en=${JSON.stringify(hrefFor("en"))};\nwindow.__pa_cur_code=siteLang==='en'?window.__pa_code_en:window.__pa_code_ru;\nfunction buildBookmarklet(){var link=document.getElementById('bm-link'),copy=document.getElementById('bm-copy'),warn=document.getElementById('warn'),drag=document.querySelector('.drag-hint'),status=document.getElementById('build-status'),version=document.getElementById('build-version'),rebuild=document.getElementById('bm-rebuild');window.__pa_cur_code=siteLang==='en'?window.__pa_code_en:window.__pa_code_ru;link.href=window.__pa_cur_code;link.classList.remove('loading');link.textContent='📌 ParserAccs';link.title=siteLang==='en'?'Drag me to your bookmarks bar':'Перетащи меня на панель закладок';link.style.filter='';if(status){status.className='ready';status.textContent=siteLang==='en'?'✓ Loader ready':'✓ Loader готов';}if(version)version.textContent='build · ${build} · loader';if(drag)drag.style.display='flex';if(warn)warn.style.display='none';if(copy)copy.disabled=false;if(rebuild)rebuild.disabled=false;applyLanguage(siteLang,false);}\n\n`;
 landing=landing.slice(0,a)+replacement+landing.slice(b);
 write(path.join(DIST,"index.html"),landing);
-for(const file of ["preview.jpg","auto-rules.png","recount.png","ethereum.svg","tron.svg","qr-erc.png","qr-trc.png","LICENSE"]){const src=path.join(ROOT,file);if(fs.existsSync(src))fs.copyFileSync(src,path.join(DIST,file))}
+{const ad=path.join(ROOT,"site","assets"),dd=path.join(DIST,"assets");fs.mkdirSync(dd,{recursive:true});for(const f of fs.readdirSync(ad))fs.copyFileSync(path.join(ad,f),path.join(dd,f))}
+fs.copyFileSync(path.join(ROOT,"LICENSE"),path.join(DIST,"LICENSE"));
 {const sd=path.join(ROOT,"docs","screenshots");if(fs.existsSync(sd)){const dd=path.join(DIST,"docs","screenshots");fs.mkdirSync(dd,{recursive:true});for(const f of fs.readdirSync(sd))fs.copyFileSync(path.join(sd,f),path.join(dd,f))}}
 write(path.join(DIST,"_headers"),"/\n  Cache-Control: no-store\n\n/parseraccs/*\n  Access-Control-Allow-Origin: *\n  Cache-Control: no-store\n");
 write(path.join(DIST,"_redirects"),"/ /index.html 200\n");
