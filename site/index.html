@@ -509,6 +509,7 @@ function applyLanguage(lang,animate){
       if(link&&!link.classList.contains('loading'))link.href=code;
     }
     if(animate)nodes.forEach(function(el){el.classList.remove('i18n-fade');});
+    if(window.__paFit)window.__paFit();
   };
   if(animate){nodes.forEach(function(el){el.classList.add('i18n-fade');});setTimeout(paint,180);}
   else paint();
@@ -652,7 +653,7 @@ try{(function(){
 try{(function(){
   var z=document.querySelector('.bm-zone');if(!z)return;
   function fit(){z.style.setProperty('--zt',Math.max(0,z.getBoundingClientRect().top+scrollY-14)+'px');}
-  fit();addEventListener('resize',fit);addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);
+  fit();window.__paFit=fit;addEventListener('resize',fit);if(window.ResizeObserver){var h=z.closest('.hero')||document.body;new ResizeObserver(fit).observe(h);}addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);
 })();}catch(e){}
 /* ===== переключатель языка с клавиатуры ===== */
 try{document.getElementById('langsw').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});}catch(e){}
