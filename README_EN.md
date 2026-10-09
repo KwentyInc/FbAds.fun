@@ -124,7 +124,7 @@ Russian and English. Pick the language on the landing page; inside FbAds.fun it 
 ```text
 src/*.js
    ↓ npm run build
-parseraccs.js
+fbads.js
    ↓ packaging + SHA-256
 manifest + Open Graph chunk
    ↓ Cloudflare Workers / fbads.fun
@@ -152,7 +152,7 @@ npm run build
 
 | Command | What it does |
 |---|---|
-| `npm run build:payload` | builds `parseraccs.js` from `src/` |
+| `npm run build:payload` | builds `fbads.js` from `src/` |
 | `npm run check` | checks the build is up to date and valid |
 | `npm run build` | creates the ready-to-deploy `dist/` |
 
@@ -161,8 +161,8 @@ npm run build
 Cloudflare Workers builds and publishes the landing page and package on every push to `main`. After deploy, `scripts/fb-rescrape.cjs` refreshes Facebook's cache automatically. To do it manually, use the [Sharing Debugger](https://developers.facebook.com/tools/debug/) for:
 
 ```text
-https://fbads.fun/parseraccs/latest/manifest
-https://fbads.fun/parseraccs/latest/og/chunk-001
+https://fbads.fun/app/latest/manifest
+https://fbads.fun/app/latest/og/chunk-001
 ```
 
 More details in [HOSTING.md](docs/HOSTING.md).

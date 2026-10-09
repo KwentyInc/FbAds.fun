@@ -4,7 +4,7 @@ const fs=require("fs");
 const path=require("path");
 const ROOT=path.resolve(__dirname,"..");
 const SRC=path.join(ROOT,"src");
-const OUT=path.join(ROOT,"parseraccs.js");
+const OUT=path.join(ROOT,"fbads.js");
 const order=["i18n.js","styles.js","accounts.js","modal.js","rules.js","bindings.js"];
 const read=(name)=>fs.readFileSync(path.join(SRC,name),"utf8");
 // CloneAds source = src/clone.js + src/clone.2.js + src/clone.3.js ... (numeric order)
@@ -14,7 +14,7 @@ function readClone(){
   const extra=fs.readdirSync(SRC).filter(n=>/^clone\.\d+\.js$/.test(n)).sort((a,b)=>parseInt(a.split(".")[1],10)-parseInt(b.split(".")[1],10));
   return [fs.readFileSync(clonePath,"utf8")].concat(extra.map(n=>read(n))).join("\n");
 }
-// Version badge shown next to the ParserAccs title (lets users see which build actually loaded).
+// Version badge shown next to the FbAds.fun title (lets users see which build actually loaded).
 function versionHeader(){
   const pkg=require(path.join(ROOT,"package.json"));
   const build=String(process.env.BUILD_VERSION||pkg.version);
@@ -41,9 +41,9 @@ function assemble(){
 const source=assemble();
 if(process.argv.includes("--check")){
   const current=fs.existsSync(OUT)?fs.readFileSync(OUT,"utf8"):"";
-  if(current!==source) throw new Error("parseraccs.js is out of date. Run npm run build:payload.");
-  console.log("parseraccs.js is up to date.");
+  if(current!==source) throw new Error("fbads.js is out of date. Run npm run build:payload.");
+  console.log("fbads.js is up to date.");
 }else{
   fs.writeFileSync(OUT,source);
-  console.log(`Generated parseraccs.js (${Buffer.byteLength(source)} bytes).`);
+  console.log(`Generated fbads.js (${Buffer.byteLength(source)} bytes).`);
 }

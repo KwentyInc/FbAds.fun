@@ -1,5 +1,5 @@
 {
-  "name": "parseraccs",
+  "name": "fbads",
   "version": "261002b1",
   "appVersion": "1.1",
   "private": true,
@@ -8,7 +8,7 @@
     "check:payload": "node scripts/build-payload.cjs --check",
     "package": "node scripts/package-release.cjs",
     "build": "npm run build:payload && npm run package",
-    "check": "npm run build:payload && node --check parseraccs.js && node --check src/loader.js && node --check scripts/package-release.cjs"
+    "check": "npm run build:payload && node --check fbads.js && node --check src/loader.js && node --check scripts/package-release.cjs"
   },
   "devDependencies": {}
 }

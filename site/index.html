@@ -551,9 +551,9 @@ try{(function(){
 
 /* ===== ГИБРИДНАЯ СБОРКА букмарклета из модулей src/ ===== */
 /* Копия лендинга вне fbads.fun (например GitHub Pages) берёт тот же self-updating loader,
-   что и продакшн: из https://fbads.fun/parseraccs/latest/tool-meta.json. Никакой сборки из src/ через CDN.
+   что и продакшн: из https://fbads.fun/app/latest/tool-meta.json. Никакой сборки из src/ через CDN.
    На fbads.fun этот блок заменяется scripts/package-release.cjs. */
-var PA_META_URL='https://fbads.fun/parseraccs/latest/tool-meta.json';
+var PA_META_URL='https://fbads.fun/app/latest/tool-meta.json';
 function buildBookmarklet(){
   var link=document.getElementById('bm-link'),copy=document.getElementById('bm-copy'),warn=document.getElementById('warn'),drag=document.querySelector('.drag-hint'),status=document.getElementById('build-status'),version=document.getElementById('build-version'),rebuild=document.getElementById('bm-rebuild');
   link.classList.add('loading');link.href='javascript:void(0)';link.textContent='⏳ …';

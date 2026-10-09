@@ -369,7 +369,7 @@
         ')…'
     );
     const out = {
-      tool: 'ParserAccs',
+      tool: 'FbAds.fun',
       kind: 'clone-structure',
       donorId: clDonorId,
       exportedAt: new Date().toISOString(),

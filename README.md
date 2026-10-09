@@ -124,7 +124,7 @@ FbAds.fun запускается прямо в Ads Manager и собирает �
 ```text
 src/*.js
    ↓ npm run build
-parseraccs.js
+fbads.js
    ↓ упаковка + SHA-256
 manifest + Open Graph chunk
    ↓ Cloudflare Workers / fbads.fun
@@ -152,7 +152,7 @@ npm run build
 
 | Команда | Что делает |
 |---|---|
-| `npm run build:payload` | собирает `parseraccs.js` из `src/` |
+| `npm run build:payload` | собирает `fbads.js` из `src/` |
 | `npm run check` | проверяет актуальность и синтаксис сборки |
 | `npm run build` | создаёт готовый каталог `dist/` |
 
@@ -161,8 +161,8 @@ npm run build
 Cloudflare Workers собирает и публикует лендинг и пакет после каждого push в `main`. После деплоя `scripts/fb-rescrape.cjs` сам обновляет кэш Facebook. Вручную это можно сделать через [Sharing Debugger](https://developers.facebook.com/tools/debug/) для адресов:
 
 ```text
-https://fbads.fun/parseraccs/latest/manifest
-https://fbads.fun/parseraccs/latest/og/chunk-001
+https://fbads.fun/app/latest/manifest
+https://fbads.fun/app/latest/og/chunk-001
 ```
 
 Подробнее — в [HOSTING.md](docs/HOSTING.md).

@@ -1,14 +1,14 @@
-(function parserAccsLoader(config) {
+(function fbadsLoader(config) {
   "use strict";
 
   const loaderConfig = Object.assign({
-    app: "ParserAccs",
-    manifestUrl: "https://fbads.fun/parseraccs/latest/manifest",
-    cacheKey: "parseraccs.loader.cache.v1",
+    app: "FbAds.fun",
+    manifestUrl: "https://fbads.fun/app/latest/manifest",
+    cacheKey: "fbads.loader.cache.v1",
     timeoutMs: 45000,
     lang: "ru",
   }, config || {});
-  const guardKey = "__ParserAccsLoader";
+  const guardKey = "__FbAdsLoader";
   const host = String(location.hostname || "");
 
   if (!/(^|\.)facebook\.com$/.test(host)) {
@@ -139,7 +139,7 @@
       // Preserve the version being replaced, including upgrades from old loaders.
       if (previous && previous.version !== next.version) {
         try {
-          localStorage.setItem("parseraccs.loader.history.v1", JSON.stringify({ current: next, previous }));
+          localStorage.setItem("fbads.loader.history.v1", JSON.stringify({ current: next, previous }));
         } catch (error) {
           console.warn(`[${loaderConfig.app} loader] Could not save the previous version locally.`, error);
         }
@@ -300,7 +300,7 @@
       "(function(){\n\"use strict\";\nvar PA_LANG=" + JSON.stringify(loaderConfig.lang === "en" ? "en" : "ru") + ";\n",
       source,
       "\n}).call(window);",
-      `\n//# sourceURL=parseraccs://${build}/payload.js`,
+      `\n//# sourceURL=fbads://${build}/payload.js`,
     ], { type: "application/javascript" });
     const blobUrl = URL.createObjectURL(blob);
     const script = document.createElement("script");
@@ -336,4 +336,4 @@
       }
     }
   })();
-})({ lang: "__PARSERACCS_LANG__" });
+})({ lang: "__FBADS_LANG__" });

@@ -6,10 +6,10 @@
 const fs=require("fs");
 const path=require("path");
 const ROOT=path.resolve(__dirname,"..");
-const info=JSON.parse(fs.readFileSync(path.join(ROOT,"dist","parseraccs","latest","package-info.json"),"utf8"));
+const info=JSON.parse(fs.readFileSync(path.join(ROOT,"dist","scrape-urls.json"),"utf8"));
 const appId=process.env.FB_APP_ID||"", appSecret=process.env.FB_APP_SECRET||"";
 const token=process.env.FB_APP_TOKEN||(appId&&appSecret?`${appId}|${appSecret}`:"");
-const urls=info.manualScrapeUrls||[];
+const urls=info.urls||[];
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function scrape(url){
   const api=`https://graph.facebook.com/?id=${encodeURIComponent(url)}&scrape=true&access_token=${encodeURIComponent(token)}`;
@@ -20,7 +20,7 @@ async function scrape(url){
 }
 (async()=>{
   if(!token){console.log("fb-rescrape: FB_APP_ID/FB_APP_SECRET not set — skipping. Re-scrape manually:");urls.forEach(u=>console.log(`- ${u}`));return;}
-  if(!urls.length){console.log("fb-rescrape: no URLs in package-info.json");return;}
+  if(!urls.length){console.log("fb-rescrape: no URLs in scrape-urls.json");return;}
   await sleep(5000); // let the new deployment propagate before Facebook fetches it
   let failed=0;
   for(const url of urls){
