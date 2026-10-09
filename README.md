@@ -1,125 +1,115 @@
 <div align="center">
 
+[🇷🇺 Русский] | [🇺🇸 English](README_EN.md)
+
+<a href="https://fbads.fun"><img src="docs/screenshots/accounts.svg" alt="ParserAccs" width="100%" style="border-radius: 8px;"></a>
+
 # ParserAccs
 
 **Одна закладка для массовой работы с Facebook Ads Manager**
 
 Сводка по кабинетам · CSV · AutoRules · CloneAds
 
-[![Website](https://img.shields.io/badge/fbads.fun-Открыть_лендинг-2dd4bf?style=for-the-badge)](https://fbads.fun)
-[![Graph API](https://img.shields.io/badge/Graph_API-v25.0-3b8cff?style=for-the-badge&logo=facebook&logoColor=white)](https://developers.facebook.com/docs/graph-api/)
-[![License](https://img.shields.io/badge/License-MIT-37d67a?style=for-the-badge)](LICENSE)
-
-[Установка](#-установка) · [Возможности](#-возможности) · [Безопасность](#-безопасность) · [Разработка](#-разработка) · [English](#english)
+[![Website](https://img.shields.io/badge/Website-fbads.fun-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://fbads.fun)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Language](https://img.shields.io/badge/Language-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
 
 </div>
 
 ---
 
-<a href="https://fbads.fun/docs/screenshots/accounts.svg"><img src="docs/screenshots/accounts.svg" alt="ParserAccs — список рекламных кабинетов"></a>
+ParserAccs запускается прямо в Ads Manager и собирает рабочие инструменты в одном окне — без расширений, установки и серверов.
 
-<sub>Скриншоты сделаны на демо-данных: названия, ID и суммы вымышленные.</sub>
-
-ParserAccs запускается прямо на странице Ads Manager и собирает рабочие инструменты в одном интерфейсе:
-
-| Модуль | Назначение | Доступ |
+| Модуль | Что делает | Доступ |
 |---|---|---|
 | **📊 Кабинеты** | Балансы, траты, лимиты, биллинг, статусы, объявления и Business Manager | Только чтение |
-| **⚙️ AutoRules** | Экспорт, перенос и массовое управление автоматическими правилами | Запись после подтверждения |
+| **⚙️ AutoRules** | Экспорт, перенос и массовое управление автоправилами | Запись после подтверждения |
 | **🧬 CloneAds** | Клонирование кампаний, адсетов, объявлений и креативов между кабинетами | **Beta**, запись после подтверждения |
 
-> **Важно:** ParserAccs не является продуктом Meta и не связан с Facebook. Перед массовыми изменениями проверяйте выбранные кабинеты и параметры операции.
+> [!IMPORTANT]
+> ParserAccs не является продуктом Meta и не связан с Facebook. Перед массовыми изменениями проверяйте выбранные кабинеты и параметры операции.
 
-## ⚡ Установка
+## ⚡ Установка за минуту
 
 1. Откройте **[fbads.fun](https://fbads.fun)**.
-2. Покажите панель закладок: `Ctrl + Shift + B` или `⌘ + Shift + B` на macOS.
+2. Покажите панель закладок: `Ctrl + Shift + B` (на macOS — `⌘ + Shift + B`).
 3. Выберите язык **RU / EN**.
 4. Перетащите кнопку **📌 ParserAccs** на панель закладок.
-5. Откройте Facebook Ads Manager и нажмите созданную закладку.
+5. Откройте Facebook Ads Manager и нажмите закладку.
 
-Если перетаскивание недоступно, нажмите **«Скопировать код»**, создайте обычную закладку и вставьте код в поле URL.
+Не получается перетащить? Нажмите **«Скопировать код»**, создайте обычную закладку и вставьте код в поле URL.
 
-### Автоматические обновления
-
-В закладке хранится небольшой стабильный загрузчик, а не вся программа. При запуске он:
-
-1. получает опубликованную версию ParserAccs;
-2. проверяет SHA-256 содержимого;
-3. сохраняет рабочую копию в `localStorage`;
-4. использует кэш, если свежая версия временно недоступна.
-
-После обновлений повторно устанавливать закладку не нужно.
+> [!TIP]
+> Закладка обновляется сама — после новых релизов переустанавливать её не нужно.
 
 ## ✨ Возможности
 
 ### 📊 Кабинеты
 
 - общая таблица всех доступных рекламных кабинетов;
-- ID без приставки `act_`, включая **Copy IDs** и CSV;
+- ID без приставки `act_`, **Copy IDs** и выгрузка в CSV для Excel;
 - имя, статус, валюта, баланс и дневной лимит;
-- траты за всё время и за выбранный период;
-- Today, Yesterday, 7/14/30 дней, месяцы, Lifetime и произвольные даты;
+- траты за всё время и за выбранный период: Today, Yesterday, 7/14/30 дней, месяцы, Lifetime и свои даты;
 - порог биллинга и привязанный Business Manager;
-- количество активных и отклонённых объявлений;
-- поиск, фильтры, сортировка по одной или нескольким колонкам;
-- сохранение выделения при фильтрации и сортировке;
-- экспорт выбранных строк в CSV для Excel;
+- активные и отклонённые объявления;
+- поиск, фильтры и сортировка по нескольким колонкам;
+- выделение сохраняется при фильтрации и сортировке;
 - обновление данных без закрытия окна.
 
-При смене периода траты пересчитываются прямо поверх таблицы — окно закрывать не нужно:
+При смене периода траты пересчитываются прямо поверх таблицы:
 
-<a href="https://fbads.fun/docs/screenshots/recount.svg"><img src="docs/screenshots/recount.svg" alt="Пересчёт трат без закрытия таблицы"></a>
+<a href="https://fbads.fun/docs/screenshots/recount.svg"><img src="docs/screenshots/recount.svg" alt="Пересчёт трат" width="820" style="border-radius: 8px;"></a>
 
 ### ⚙️ AutoRules
 
-Переносит автоматические правила из кабинета-донора в выбранные цели.
+Переносит автоматические правила из кабинета-донора в выбранные кабинеты.
 
-- выбор отдельных правил;
+- выбор отдельных правил и импорт сразу в несколько кабинетов;
 - фильтры и счётчики правил по кабинетам;
-- импорт сразу в несколько целей;
-- конвертация денежных порогов под валюту цели;
+- пересчёт денежных порогов под валюту целевого кабинета;
 - импорт в состоянии `PAUSED`;
 - массовое включение, выключение и удаление;
-- экспорт и импорт структуры правил через JSON;
+- экспорт и импорт правил через JSON;
 - подробный цветной лог операций.
 
-> Время в правилах `SCHEDULED` не сдвигается автоматически: переходы на летнее время делают фиксированное смещение небезопасным. Разница часовых поясов выводится в лог для ручной проверки.
+> [!NOTE]
+> Время в правилах `SCHEDULED` не сдвигается автоматически из‑за перехода на летнее время. Разница часовых поясов выводится в лог для ручной проверки.
 
-<a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820"></a>
+<a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820" style="border-radius: 8px;"></a>
 
 ### 🧬 CloneAds — beta
 
-Клонирует структуру выбранных кампаний из кабинета-донора в один или несколько целевых кабинетов.
+Клонирует выбранные кампании из кабинета-донора в один или несколько целевых кабинетов.
 
 - кампании, адсеты, объявления и креативы;
 - экспорт и импорт структуры через JSON;
-- сопоставление Fan Page, пикселя и Instagram;
-- перенос изображений и мультиязычных ассетов, где это поддерживается API;
-- статус кампании `PAUSED` или `ACTIVE`;
-- безопасный режим создания как черновик;
-- переопределение Fan Page и диапазона бюджета;
+- подстановка Fan Page, пикселя и Instagram;
+- перенос изображений и мультиязычных ассетов (где позволяет API);
+- статус кампании `PAUSED` или `ACTIVE`, безопасный режим «черновик»;
+- замена Fan Page и случайный бюджет в заданном диапазоне;
 - нейминг: исходный, замена ID, Find/Replace или шаблоны с макросами;
-- остановка операции, лог ошибок и защита от повторной обработки уже завершённых пар.
+- кнопка «Стоп», лог ошибок и защита от повторной обработки.
 
-> **Рекомендуется:** оставляйте кампанию в статусе `PAUSED`, используйте draft и проверяйте кампанию, адсеты, страницы, пиксели, плейсменты, бюджеты и креативы в Ads Manager перед запуском. CloneAds экспериментальный: некоторые форматы и ограничения конкретного кабинета могут потребовать ручной доработки.
+> [!WARNING]
+> Оставляйте кампании на `PAUSED`, используйте черновик и проверяйте результат в Ads Manager перед запуском. CloneAds — экспериментальный модуль: некоторые форматы могут потребовать ручной доработки.
 
-<a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820"></a>
+<a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820" style="border-radius: 8px;"></a>
 
 ## 🔐 Безопасность
 
-- Вкладка **Кабинеты** выполняет только запросы на чтение.
-- AutoRules и CloneAds явно запрашивают подтверждение перед записью.
-- Токен берётся из открытой сессии Ads Manager или вводится пользователем вручную.
-- Токен не отправляется на сервер ParserAccs и используется только для запросов к Graph API от имени пользователя.
-- Код проекта открыт для проверки; опубликованный payload проверяется по SHA-256.
-- Для CloneAds по умолчанию рекомендуется `PAUSED` и draft.
+- Вкладка **Кабинеты** только читает данные.
+- AutoRules и CloneAds спрашивают подтверждение перед любыми изменениями.
+- Токен берётся из открытой сессии Ads Manager и **никуда не отправляется** — только в официальный Graph API от вашего имени.
+- Код открыт, каждая версия проверяется по контрольной сумме.
 
 ## 🌐 Языки
 
-Интерфейс лендинга и букмарклета поддерживает русский и английский. Язык установки задаётся переключателем **RU / EN** на лендинге; внутри ParserAccs его можно поменять без перезапуска.
+Русский и английский. Язык выбирается на лендинге, а внутри ParserAccs переключается без перезапуска.
 
-## 🧩 Как устроена доставка
+<details>
+<summary>🛠 Техническая архитектура и Разработка (Кликни, чтобы раскрыть)</summary>
+
+### Как устроена доставка
 
 ```text
 src/*.js
@@ -127,39 +117,28 @@ src/*.js
 parseraccs.js
    ↓ упаковка + SHA-256
 manifest + Open Graph chunk
-   ↓ Cloudflare Worker / fbads.fun
-стабильный bookmarklet loader
+   ↓ Cloudflare Workers / fbads.fun
+стабильный загрузчик в закладке
 ```
 
-Исходные модули собираются в единый payload. Cloudflare публикует лендинг и версионированный пакет после изменений в `main`. Загрузчик получает манифест и chunk, проверяет целостность и запускает код в Ads Manager.
+В закладке хранится небольшой загрузчик, а не вся программа. При запуске он:
 
-Подробная инструкция по публикации: [HOSTING.md](HOSTING.md).
+1. получает опубликованную версию ParserAccs (manifest + chunk через Open Graph-кэш Facebook);
+2. проверяет SHA-256 содержимого;
+3. сохраняет рабочую копию в `localStorage`;
+4. использует кэш, если свежая версия временно недоступна.
 
-## 🛠 Разработка
+### Сборка
 
-Требуется Node.js 20+.
+Нужен Node.js 20+.
 
 ```bash
-git clone https://github.com/Kw3nty/ParserAccs.git
+git clone https://github.com/KwentyInc/ParserAccs.git
 cd ParserAccs
 npm ci
 npm run check
 npm run build
 ```
-
-Основные файлы:
-
-```text
-src/i18n.js       токен, переводы и общие данные
-src/accounts.js   загрузка кабинетов и метрик
-src/modal.js      каркас интерфейса
-src/rules.js      AutoRules
-src/clone.js      CloneAds
-src/styles.js     дизайн интерфейса
-src/bindings.js   события, таблица и экспорт
-```
-
-Полезные команды:
 
 | Команда | Что делает |
 |---|---|
@@ -167,45 +146,42 @@ src/bindings.js   события, таблица и экспорт
 | `npm run check` | проверяет актуальность и синтаксис сборки |
 | `npm run build` | создаёт готовый каталог `dist/` |
 
-### Публикация без Facebook scrape token
+### Деплой
 
-После нового деплоя обновите два адреса через [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/):
+Cloudflare Workers собирает и публикует лендинг и пакет после каждого push в `main`. После деплоя `scripts/fb-rescrape.cjs` сам обновляет кэш Facebook. Вручную это можно сделать через [Sharing Debugger](https://developers.facebook.com/tools/debug/) для адресов:
 
 ```text
 https://fbads.fun/parseraccs/latest/manifest
 https://fbads.fun/parseraccs/latest/og/chunk-001
 ```
 
-Для каждого адреса нажмите **Fetch new information** или **Scrape Again**. Серверный Facebook-токен для этого не нужен.
+Подробнее — в [HOSTING.md](HOSTING.md).
+
+### Структура исходников
+
+```text
+src/i18n.js       токен, переводы и общие данные
+src/accounts.js   загрузка кабинетов и метрик
+src/modal.js      каркас интерфейса
+src/rules.js      AutoRules
+src/clone*.js     CloneAds
+src/styles.js     дизайн интерфейса
+src/bindings.js   события, таблица и экспорт
+```
+
+</details>
 
 ## ☕ Поддержать проект
 
-ParserAccs бесплатный, open-source и без рекламы. QR-коды и адреса USDT TRC-20 / ERC-20 находятся в разделе **«Донат»** на [fbads.fun](https://fbads.fun/#donate).
+> 💚 **ParserAccs бесплатный, с открытым кодом и без рекламы.**
+> Если инструмент экономит вам время — можно угостить автора кофе ☕
+>
+> 🟥 **USDT TRC-20 (Tron):** `TVGbahTRp8QjrU4pHxrop7VNdQ5xhoTngZ`
+>
+> 🔷 **USDT ERC-20 (Ethereum):** `0x3A0a4287A488C6C8BCFBc8e8acD1409b8ffE48E0`
+>
+> 📱 QR-коды — в разделе [«Донат» на fbads.fun](https://fbads.fun/#donate). Спасибо! 🙏
 
 ## 📄 Лицензия
 
 [MIT](LICENSE) · Автор: [Kwenty](https://t.me/kw33nty)
-
----
-
-<a id="english"></a>
-
-## English
-
-ParserAccs is a bookmarklet for Facebook Ads Manager with three modules:
-
-- **Accounts** — read-only account reporting, date filters, selection, Copy IDs and Excel-ready CSV;
-- **AutoRules** — cross-account automated-rules transfer with currency conversion and JSON import/export;
-- **CloneAds (beta)** — campaign, ad set, ad and creative cloning with draft/PAUSED safety options, naming templates and operation logs.
-
-Install it from **[fbads.fun](https://fbads.fun)** by dragging the ParserAccs button to the bookmarks bar. The installed bookmark uses a self-updating, SHA-256-verified loader, so it does not need to be reinstalled after every release.
-
-CloneAds writes through the Graph API. Keep cloned campaigns **PAUSED**, use draft mode and review every result in Ads Manager before launch.
-
-| Accounts | AutoRules | CloneAds |
-|---|---|---|
-| <a href="https://fbads.fun/docs/screenshots/accounts-en.svg"><img src="docs/screenshots/accounts-en.svg" alt="Accounts" width="300"></a> | <a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="AutoRules" width="300"></a> | <a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="CloneAds" width="300"></a> |
-
-Screenshots use demo data (fictional names, IDs and amounts).
-
-See [HOSTING.md](HOSTING.md) for build and deployment details.
