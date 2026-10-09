@@ -112,7 +112,7 @@ function fetchAll(base,label){
   .catch(function(e){setStatus('✗ '+e.message,'err');});
 }
 el('local').onclick=function(){fetchAll('../src/','читаю ./src/ (локально)');};
-el('cdn').onclick=function(){fetchAll('https://cdn.jsdelivr.net/gh/Kw3nty/ParserAccs@main/src/','jsDelivr @main');};
+el('cdn').onclick=function(){fetchAll('https://cdn.jsdelivr.net/gh/KwentyInc/FbAds.fun@main/src/','jsDelivr @main');};
 el('rebuild').onclick=function(){build();};
 el('lang').onclick=function(){lang=lang==='ru'?'en':'ru';applyLang();el('out').value=cur();};
 el('copy').onclick=function(){

@@ -33,7 +33,7 @@ const loaderFor=lang=>loader.replaceAll("__PARSERACCS_LANG__",lang);
 const hrefFor=lang=>`javascript:${encodeURIComponent(loaderFor(lang))}`;
 const packageInfo={...manifest,latestManifestUrl:pretty("latest/manifest.html"),manualScrapeUrls:[pretty("latest/manifest.html"),...manifest.chunks.map(x=>x.latestUrl)]};
 write(path.join(buildDir,"package-info.json"),JSON.stringify(packageInfo,null,2)+"\n");write(path.join(latestDir,"package-info.json"),JSON.stringify(packageInfo,null,2)+"\n");
-write(path.join(latestDir,"tool-meta.json"),JSON.stringify({app:"ParserAccs",title:"FbAds.fun",build,version:build,landingUrl:"https://fbads.fun/",sourceUrl:"https://github.com/Kw3nty/ParserAccs",bookmarkletHref:hrefFor("ru"),bookmarkletHrefEn:hrefFor("en"),latestManifestUrl:packageInfo.latestManifestUrl,generatedAt:manifest.generatedAt},null,2)+"\n");
+write(path.join(latestDir,"tool-meta.json"),JSON.stringify({app:"ParserAccs",title:"FbAds.fun",build,version:build,landingUrl:"https://fbads.fun/",sourceUrl:"https://github.com/KwentyInc/FbAds.fun",bookmarkletHref:hrefFor("ru"),bookmarkletHrefEn:hrefFor("en"),latestManifestUrl:packageInfo.latestManifestUrl,generatedAt:manifest.generatedAt},null,2)+"\n");
 let landing=fs.readFileSync(path.join(ROOT,"site","index.html"),"utf8");
 const marker="/* ===== ГИБРИДНАЯ СБОРКА букмарклета из модулей src/ ===== */";
 const init="/* ===== инициализация ===== */";

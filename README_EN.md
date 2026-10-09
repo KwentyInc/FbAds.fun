@@ -16,9 +16,9 @@ Accounts overview · CSV · AutoRules · CloneAds
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Language](https://img.shields.io/badge/Language-JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
 
-[![Stars](https://img.shields.io/github/stars/KwentyInc/ParserAccs?style=for-the-badge&logo=github&color=2dd4bf)](https://github.com/KwentyInc/ParserAccs/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/KwentyInc/ParserAccs?style=for-the-badge&color=3b8cff)](https://github.com/KwentyInc/ParserAccs/commits/main)
-[![CI](https://img.shields.io/github/actions/workflow/status/KwentyInc/ParserAccs/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/KwentyInc/ParserAccs/actions/workflows/ci.yml)
+[![Stars](https://img.shields.io/github/stars/KwentyInc/FbAds.fun?style=for-the-badge&logo=github&color=2dd4bf)](https://github.com/KwentyInc/FbAds.fun/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/KwentyInc/FbAds.fun?style=for-the-badge&color=3b8cff)](https://github.com/KwentyInc/FbAds.fun/commits/main)
+[![CI](https://img.shields.io/github/actions/workflow/status/KwentyInc/FbAds.fun/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/KwentyInc/FbAds.fun/actions/workflows/ci.yml)
 
 </div>
 
@@ -143,8 +143,8 @@ The bookmark stores a small loader, not the whole program. On launch it:
 Requires Node.js 20+.
 
 ```bash
-git clone https://github.com/KwentyInc/ParserAccs.git
-cd ParserAccs
+git clone https://github.com/KwentyInc/FbAds.fun.git
+cd FbAds.fun
 npm ci
 npm run check
 npm run build
@@ -194,7 +194,7 @@ src/bindings.js   events, table and export
 
 ## ⭐ Star history
 
-<a href="https://star-history.com/#KwentyInc/ParserAccs&Date"><img src="https://api.star-history.com/svg?repos=KwentyInc/ParserAccs&type=Date&theme=dark" alt="Star History" width="640"></a>
+<a href="https://star-history.com/#KwentyInc/FbAds.fun&Date"><img src="https://api.star-history.com/svg?repos=KwentyInc/FbAds.fun&type=Date&theme=dark" alt="Star History" width="640"></a>
 
 ## 📄 License
 
