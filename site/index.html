@@ -9,7 +9,9 @@
 <meta name="theme-color" content="#0E1116">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap"></noscript>
 <style>
 :root{
   --ink:#0E1116;--ink-2:#12161C;--surface:#171C24;--raised:#1E242E;--line:#2A313D;--line-soft:#212732;
@@ -210,7 +212,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <a class="lnk" href="#install" data-i18n="nav_install"></a>
       <a class="lnk" href="#modules" data-i18n="nav_modules"></a>
       <a class="lnk" href="#donate" data-i18n="donate_nav"></a>
-      <div id="langsw" class="langsw" role="switch" aria-label="Language" tabindex="0">
+      <div id="langsw" class="langsw" role="switch" aria-checked="false" aria-label="English" tabindex="0">
         <span class="knob"></span><span class="opt" data-lang="ru">RU</span><span class="opt" data-lang="en">EN</span>
       </div>
       <a class="gh" href="https://github.com/KwentyInc/ParserAccs" target="_blank" rel="noopener">
@@ -219,6 +221,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       </a>
     </nav>
   </header>
+<main>
 
   <div class="hero">
     <h1 data-i18n="hero_h"></h1>
@@ -358,6 +361,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     </div>
     <p class="donate-note" data-i18n-html="donate_note"></p>
   </section>
+</main>
 </div>
 
 <footer><div class="wrap"><span data-i18n-html="footer"></span><span data-i18n="disclaimer"></span></div></footer>
@@ -490,7 +494,7 @@ function applyLanguage(lang,animate){
   try{localStorage.setItem('pa_site_lang',lang);}catch(e){}
   document.documentElement.lang=lang;
   var sw=document.getElementById('langsw');
-  if(sw){sw.classList.toggle('en',lang==='en');sw.querySelectorAll('.opt').forEach(function(o){o.classList.toggle('on',o.getAttribute('data-lang')===lang);});}
+  if(sw){sw.classList.toggle('en',lang==='en');sw.setAttribute('aria-checked',lang==='en'?'true':'false');sw.querySelectorAll('.opt').forEach(function(o){o.classList.toggle('on',o.getAttribute('data-lang')===lang);});}
   var nodes=document.querySelectorAll('[data-i18n],[data-i18n-html]');
   var paint=function(){
     nodes.forEach(function(el){
