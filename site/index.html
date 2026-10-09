@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ParserAccs — все рекламные кабинеты в одной закладке</title>
+<title>FbAds.fun — все рекламные кабинеты в одной закладке</title>
 <meta name="description" content="Букмарклет для Facebook Ads Manager: сводка по кабинетам, CSV, перенос автоправил и клонирование кампаний.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E1116">
@@ -44,6 +44,7 @@ code{font-size:.9em;background:var(--raised);padding:1px 6px;border-radius:5px}
 .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}
 .brand{font:600 19px var(--display);letter-spacing:-.01em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}
 .brand svg{color:var(--blue)}
+.brand .tld{color:var(--blue);font-size:.62em;letter-spacing:0;margin-left:1px}
 .nav{display:flex;align-items:center;gap:6px}
 .nav a.lnk{color:var(--muted);text-decoration:none;font-weight:500;font-size:15px;padding:8px 12px;border-radius:10px}
 .nav a.lnk:hover{color:var(--text);background:var(--surface)}
@@ -204,9 +205,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <div class="topbar-note" aria-hidden="true"></div>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="#top" id="top" aria-label="ParserAccs">
+    <a class="brand" href="#top" id="top" aria-label="FbAds.fun">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-      ParserAccs
+      <span>FbAds<span class="tld">.fun</span></span>
     </a>
     <nav class="nav">
       <a class="lnk" href="#install" data-i18n="nav_install"></a>
@@ -248,8 +249,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="stage">
       <div class="frame">
         <div class="frame-bar"><div class="addr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>adsmanager.facebook.com</div></div>
-        <div class="bmarks"><span>Ads Manager</span><span>Business Suite</span><span class="mine">📌 ParserAccs</span><span>Events Manager</span></div>
-        <div class="shot"><a href="docs/screenshots/accounts.svg"><img src="docs/screenshots/accounts.svg" alt="ParserAccs: таблица кабинетов" width="1452" height="792"></a></div>
+        <div class="bmarks"><span>Ads Manager</span><span>Business Suite</span><span class="mine">📌 FbAds.fun</span><span>Events Manager</span></div>
+        <div class="shot"><a href="docs/screenshots/accounts.svg"><img src="docs/screenshots/accounts.svg" alt="FbAds.fun: таблица кабинетов" width="1452" height="792"></a></div>
       </div>
     </div>
   </div>
@@ -300,7 +301,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         </ol>
       </div>
       <div class="panel-media">
-        <div class="shot"><a href="docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" loading="lazy" width="1452" height="792"></a><div class="cap" data-i18n="cap3"></div></div>
+        <div class="shot"><a href="docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="FbAds.fun AutoRules" loading="lazy" width="1452" height="792"></a><div class="cap" data-i18n="cap3"></div></div>
       </div>
     </div>
 
@@ -316,7 +317,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <p class="note" data-i18n-html="clone_note"></p>
       </div>
       <div class="panel-media">
-        <div class="shot"><a href="docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" loading="lazy" width="1452" height="792"></a><div class="cap" data-i18n="cap4"></div></div>
+        <div class="shot"><a href="docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="FbAds.fun CloneAds" loading="lazy" width="1452" height="792"></a><div class="cap" data-i18n="cap4"></div></div>
       </div>
     </div>
   </section>
@@ -398,7 +399,7 @@ try{(function(){
 /* ===== словари лендинга ===== */
 var D={
 ru:{
- nav_install:'Установка',nav_modules:'Возможности',hero_h:'Все рекламные кабинеты — в одной закладке',feat_s:'Три модуля в одном окне поверх Ads Manager.',tab_acc:'Кабинеты',acc_h:'Сводка по всем кабинетам',acc_p:'Баланс, траты, лимиты и статусы всех кабинетов в одной таблице — с фильтрами, сортировкой и выгрузкой.',f45t:'Выделение и CSV',f45p:'Отмечай кабинеты, копируй ID или выгружай CSV — файл сразу раскладывается по столбцам в Excel.',sec_t:'Безопасность',sec2t:'Изменения — только с подтверждением',sec2p:'AutoRules и CloneAds ничего не меняют в кабинетах без твоего явного подтверждения.',sec3t:'Токен остаётся у тебя',sec3p:'Токен берётся из открытой сессии Ads Manager и уходит только в Graph API от твоего имени.',disclaimer:'ParserAccs не связан с Meta и Facebook.',
+ nav_install:'Установка',nav_modules:'Возможности',hero_h:'Все рекламные кабинеты — в одной закладке',feat_s:'Три модуля в одном окне поверх Ads Manager.',tab_acc:'Кабинеты',acc_h:'Сводка по всем кабинетам',acc_p:'Баланс, траты, лимиты и статусы всех кабинетов в одной таблице — с фильтрами, сортировкой и выгрузкой.',f45t:'Выделение и CSV',f45p:'Отмечай кабинеты, копируй ID или выгружай CSV — файл сразу раскладывается по столбцам в Excel.',sec_t:'Безопасность',sec2t:'Изменения — только с подтверждением',sec2p:'AutoRules и CloneAds ничего не меняют в кабинетах без твоего явного подтверждения.',sec3t:'Токен остаётся у тебя',sec3p:'Токен берётся из открытой сессии Ads Manager и уходит только в Graph API от твоего имени.',disclaimer:'FbAds.fun не связан с Meta и Facebook.',
  lead:'Одна закладка для работы с Facebook Ads Manager: сводка по кабинетам, экспорт CSV, перенос автоправил и экспериментальное клонирование кампаний между аккаунтами.',
  tag1:'Graph API v25.0',tag2:'Read-only парсер',tag3:'Без установки',tag4:'CSV для Excel',tag5:'⚙️ AutoRules',tag6:'🧬 CloneAds beta',
  hint:'Нет панели? Нажми <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> (Mac: <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>)',
@@ -408,7 +409,7 @@ ru:{
  warn:'⚠ <span class="pa-wmsg">Код букмарклета не подгрузился.</span> Проверь, что модули <code>src/*.js</code> лежат в репозитории <a href="https://github.com/KwentyInc/ParserAccs" target="_blank">KwentyInc/ParserAccs</a>. Через 1–2 минуты после push нажми «🔁 Пересобрать».',
  how_t:'Как установить',how_s:'Никаких расширений и установок — одна закладка',
  s1t:'Покажи панель закладок',s1p:'Нажми <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>, чтобы сверху появилась полоса закладок.',
- s2t:'Перетащи кнопку',s2p:'Зажми кнопку ParserAccs выше и брось её на панель закладок. На телефоне — «Скопировать код» и создай закладку вручную.',
+ s2t:'Перетащи кнопку',s2p:'Зажми кнопку FbAds.fun выше и брось её на панель закладок. На телефоне — «Скопировать код» и создай закладку вручную.',
  s3t:'Запусти в Ads Manager',s3p:'Открой Facebook Ads Manager и кликни по закладке. Готово — таблица кабинетов и вкладка AutoRules перед тобой.',
  feat_t:'Что умеет',
  f1t:'Полная сводка',f1p:'ID, имя, статус, баланс, валюта, траты за всё время и за период, лимит, биллинг, активные и отклонённые объявления, BM.',
@@ -435,11 +436,11 @@ ru:{
  donate_t:'Поддержать автора',
  donate_s:'Инструмент бесплатный, open‑source и без рекламы. Если он экономит вам время — чаевые в USDT будут очень кстати.',
  donate_addr:'Адрес кошелька',donate_scan:'Отсканируйте',donate_copy:'Скопировать',
- donate_note:'Это <b>не обязательно</b> — ParserAccs останется бесплатным. Спасибо, что пользуетесь 💚',
+ donate_note:'Это <b>не обязательно</b> — FbAds.fun останется бесплатным. Спасибо, что пользуетесь 💚',
  footer:'Сделал <a href="https://t.me/kw33nty" target="_blank" rel="noopener">Kwenty</a> · Исходники на <a href="https://github.com/KwentyInc/ParserAccs" target="_blank">GitHub</a> · Лицензия MIT'
 },
 en:{
- nav_install:'Install',nav_modules:'Features',hero_h:'Every ad account, one bookmark away',feat_s:'Three modules in one window on top of Ads Manager.',tab_acc:'Accounts',acc_h:'Every account at a glance',acc_p:'Balance, spend, limits and statuses of all accounts in one table — with filters, sorting and export.',f45t:'Selection & CSV',f45p:'Tick accounts, copy IDs or export a CSV that opens in Excel already split into columns.',sec_t:'Safety',sec2t:'Changes only after you confirm',sec2p:'AutoRules and CloneAds change nothing in your accounts without your explicit confirmation.',sec3t:'Your token stays yours',sec3p:'The token comes from your open Ads Manager session and goes only to the Graph API on your behalf.',disclaimer:'ParserAccs is not affiliated with Meta or Facebook.',
+ nav_install:'Install',nav_modules:'Features',hero_h:'Every ad account, one bookmark away',feat_s:'Three modules in one window on top of Ads Manager.',tab_acc:'Accounts',acc_h:'Every account at a glance',acc_p:'Balance, spend, limits and statuses of all accounts in one table — with filters, sorting and export.',f45t:'Selection & CSV',f45p:'Tick accounts, copy IDs or export a CSV that opens in Excel already split into columns.',sec_t:'Safety',sec2t:'Changes only after you confirm',sec2p:'AutoRules and CloneAds change nothing in your accounts without your explicit confirmation.',sec3t:'Your token stays yours',sec3p:'The token comes from your open Ads Manager session and goes only to the Graph API on your behalf.',disclaimer:'FbAds.fun is not affiliated with Meta or Facebook.',
  lead:'One bookmark for Facebook Ads Manager: account reporting, CSV export, automated-rules transfer and experimental cross-account campaign cloning.',
  tag1:'Graph API v25.0',tag2:'Read-only parser',tag3:'No install',tag4:'Excel-ready CSV',tag5:'⚙️ AutoRules',tag6:'🧬 CloneAds beta',
  hint:'No bar? Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> (Mac: <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>)',
@@ -449,7 +450,7 @@ en:{
  warn:'⚠ <span class="pa-wmsg">Bookmarklet code failed to load.</span> Check that modules <code>src/*.js</code> exist in the <a href="https://github.com/KwentyInc/ParserAccs" target="_blank">KwentyInc/ParserAccs</a> repo. Wait 1–2 min after a push and click "🔁 Rebuild".',
  how_t:'How to install',how_s:'No extensions, no setup — a single bookmark',
  s1t:'Show the bookmarks bar',s1p:'Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> so the bookmarks bar appears on top.',
- s2t:'Drag the button',s2p:'Grab the ParserAccs button above and drop it on the bookmarks bar. On mobile — copy the code and create a bookmark manually.',
+ s2t:'Drag the button',s2p:'Grab the FbAds.fun button above and drop it on the bookmarks bar. On mobile — copy the code and create a bookmark manually.',
  s3t:'Run it in Ads Manager',s3p:'Open Facebook Ads Manager and click the bookmark. Done — the accounts table and the AutoRules tab are yours.',
  feat_t:'What it does',
  f1t:'Full overview',f1p:'ID, name, status, balance, currency, lifetime and period spend, limit, billing, active and disapproved ads, BM.',
@@ -476,7 +477,7 @@ en:{
  donate_t:'Support the author',
  donate_s:'The tool is free, open-source and ad-free. If it saves you time, a USDT tip is very much appreciated.',
  donate_addr:'Wallet address',donate_scan:'Scan',donate_copy:'Copy',
- donate_note:'This is <b>not required</b> — ParserAccs stays free. Thanks for using it 💚',
+ donate_note:'This is <b>not required</b> — FbAds.fun stays free. Thanks for using it 💚',
  footer:'Built by <a href="https://t.me/kw33nty" target="_blank" rel="noopener">Kwenty</a> · Source on <a href="https://github.com/KwentyInc/ParserAccs" target="_blank" rel="noopener">GitHub</a> · MIT License'
 }
 };
@@ -562,14 +563,14 @@ function buildBookmarklet(){
     if(!meta||!meta.bookmarkletHref)throw new Error('tool-meta.json без bookmarkletHref');
     window.__pa_code_ru=meta.bookmarkletHref;window.__pa_code_en=meta.bookmarkletHrefEn||meta.bookmarkletHref;
     window.__pa_cur_code=siteLang==='en'?window.__pa_code_en:window.__pa_code_ru;
-    link.href=window.__pa_cur_code;link.classList.remove('loading');link.textContent='📌 ParserAccs';
+    link.href=window.__pa_cur_code;link.classList.remove('loading');link.textContent='📌 FbAds.fun';
     link.title=siteLang==='en'?'Drag me to your bookmarks bar':'Перетащи меня на панель закладок';link.style.filter='';
     if(status){status.className='ready';status.textContent=siteLang==='en'?'✓ Loader ready':'✓ Loader готов';}
     if(version)version.textContent='build · '+(meta.build||'?')+' · loader';
     if(drag)drag.style.display='flex';if(warn)warn.style.display='none';if(copy)copy.disabled=false;if(rebuild)rebuild.disabled=false;
     if(typeof applyLanguage==='function')applyLanguage(siteLang,false);
   }).catch(function(e){
-    link.classList.remove('loading');link.textContent='⚠ ParserAccs';
+    link.classList.remove('loading');link.textContent='⚠ FbAds.fun';
     if(status){status.className='err';status.textContent=(siteLang==='en'?'✗ Could not load loader: ':'✗ Не удалось загрузить loader: ')+e.message+' — fbads.fun';}
     if(rebuild)rebuild.disabled=false;
   });

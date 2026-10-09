@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ParserAccs — локальная сборка букмарклета</title>
+<title>FbAds.fun — локальная сборка букмарклета</title>
 <style>
   :root{--bg:#0b0d11;--box:#141519;--line:#33373f;--txt:#e8eaef;--mut:#9aa0ab;--teal:#2dd4bf;--green:#37d67a;--red:#ff5d6c;--amber:#f5b13d;}
   *{box-sizing:border-box}
@@ -32,7 +32,7 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>🛠 ParserAccs <span>· build</span></h1>
+  <h1>🛠 FbAds.fun <span>· build</span></h1>
   <div class="sub">Локальный сборщик букмарклета из модулей <b>src/</b> (включая clone.js). Без CDN и кэша.</div>
   <div class="box">
     <div class="row">
@@ -70,7 +70,7 @@ function listFiles(){el('files').innerHTML=ALL.map(function(m){return '<span cla
 function haveAll(){return ALL.every(function(m){return !!SRC[m];});}
 function hash(s){var h=5381;for(var i=0;i<s.length;i++){h=((h<<5)+h)^s.charCodeAt(i);h|=0;}return (h>>>0).toString(16).padStart(8,'0').slice(0,6);}
 function cur(){return lang==='en'?window.__code_en:window.__code_ru;}
-function applyLang(){var a=el('bm');if(window.__code_ru){a.href=cur();a.classList.remove('loading');a.textContent='📌 ParserAccs ('+lang.toUpperCase()+')';}el('lang').textContent='🌐 '+(lang==='ru'?'EN':'RU');}
+function applyLang(){var a=el('bm');if(window.__code_ru){a.href=cur();a.classList.remove('loading');a.textContent='📌 FbAds.fun ('+lang.toUpperCase()+')';}el('lang').textContent='🌐 '+(lang==='ru'?'EN':'RU');}
 function build(){
   if(!haveAll()){setStatus('✗ не все модули загружены — выбери источник','err');return;}
   var clone=CLONE_PARTS.map(function(m){return SRC[m];}).join('\n');

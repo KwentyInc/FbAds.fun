@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,50:1e3a8a,100:2dd4bf&height=190&section=header&text=ParserAccs&fontSize=64&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Facebook%20Ads%20Manager%20toolkit&descAlignY=58&descSize=18" width="100%" alt="ParserAccs">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,50:1e3a8a,100:2dd4bf&height=190&section=header&text=FbAds.fun&fontSize=64&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Facebook%20Ads%20Manager%20toolkit&descAlignY=58&descSize=18" width="100%" alt="FbAds.fun">
 
 [🇷🇺 Русский](README.md) | [🇺🇸 English]
 
-<a href="https://fbads.fun"><img src="docs/screenshots/accounts-en.svg" alt="ParserAccs" width="100%" style="border-radius: 8px;"></a>
+<a href="https://fbads.fun"><img src="docs/screenshots/accounts-en.svg" alt="FbAds.fun" width="100%" style="border-radius: 8px;"></a>
 
 <a href="https://fbads.fun"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2DD4BF&center=true&vCenter=true&width=640&lines=All%20ad%20accounts%20in%20one%20window;Transfer%20automated%20rules%20between%20accounts;Clone%20campaigns%20in%20a%20few%20clicks;No%20extensions%2C%20no%20installs" alt="typing"></a>
 
@@ -24,7 +24,7 @@ Accounts overview · CSV · AutoRules · CloneAds
 
 ---
 
-ParserAccs runs right inside Ads Manager and brings your daily tools into one window — no extensions, no installs, no servers.
+FbAds.fun runs right inside Ads Manager and brings your daily tools into one window — no extensions, no installs, no servers.
 
 | Module | What it does | Access |
 |---|---|---|
@@ -33,14 +33,14 @@ ParserAccs runs right inside Ads Manager and brings your daily tools into one wi
 | **🧬 CloneAds** | Clone campaigns, ad sets, ads and creatives between accounts | **Beta**, writes after confirmation |
 
 > [!IMPORTANT]
-> ParserAccs is not a Meta product and is not affiliated with Facebook. Double-check selected accounts and settings before bulk changes.
+> FbAds.fun is not a Meta product and is not affiliated with Facebook. Double-check selected accounts and settings before bulk changes.
 
 ## ⚡ Install in a minute
 
 1. Open **[fbads.fun](https://fbads.fun)**.
 2. Show the bookmarks bar: `Ctrl + Shift + B` (macOS: `⌘ + Shift + B`).
 3. Choose **RU / EN**.
-4. Drag the **📌 ParserAccs** button to the bookmarks bar.
+4. Drag the **📌 FbAds.fun** button to the bookmarks bar.
 5. Open Facebook Ads Manager and click the bookmark.
 
 Can't drag? Click **"Copy code"**, create a regular bookmark and paste the code into the URL field.
@@ -81,7 +81,7 @@ Transfers automated rules from a donor account to the selected accounts.
 > [!NOTE]
 > `SCHEDULED` rule hours are not shifted automatically because of DST. The time-zone difference is shown in the log for manual review.
 
-<a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820" style="border-radius: 8px;"></a>
+<a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="FbAds.fun AutoRules" width="820" style="border-radius: 8px;"></a>
 
 ### 🧬 CloneAds — beta
 
@@ -99,7 +99,7 @@ Clones selected campaigns from a donor account into one or more target accounts.
 > [!WARNING]
 > Keep campaigns `PAUSED`, use draft mode and review everything in Ads Manager before launch. CloneAds is experimental: some formats may need manual fixes.
 
-<a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820" style="border-radius: 8px;"></a>
+<a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="FbAds.fun CloneAds" width="820" style="border-radius: 8px;"></a>
 
 ## 🧰 Tech stack
 
@@ -114,7 +114,7 @@ Clones selected campaigns from a donor account into one or more target accounts.
 
 ## 🌐 Languages
 
-Russian and English. Pick the language on the landing page; inside ParserAccs it switches without a restart.
+Russian and English. Pick the language on the landing page; inside FbAds.fun it switches without a restart.
 
 <details>
 <summary>🛠 Technical architecture & Development (click to expand)</summary>
@@ -133,7 +133,7 @@ stable bookmark loader
 
 The bookmark stores a small loader, not the whole program. On launch it:
 
-1. fetches the published ParserAccs version (manifest + chunk via Facebook's Open Graph cache);
+1. fetches the published FbAds.fun version (manifest + chunk via Facebook's Open Graph cache);
 2. verifies the SHA-256 of the content;
 3. stores a working copy in `localStorage`;
 4. falls back to the cache if the fresh version is temporarily unavailable.
@@ -183,7 +183,7 @@ src/bindings.js   events, table and export
 
 ## ☕ Support the project
 
-> 💚 **ParserAccs is free, open-source and ad-free.**
+> 💚 **FbAds.fun is free, open-source and ad-free.**
 > If it saves you time — you can buy the author a coffee ☕
 >
 > 🟥 **USDT TRC-20 (Tron):** `TVGbahTRp8QjrU4pHxrop7VNdQ5xhoTngZ`

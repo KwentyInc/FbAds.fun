@@ -1,4 +1,4 @@
-# ParserAccs hosting
+# FbAds.fun hosting
 
 The bookmark contains a small stable loader. Releases build one `parseraccs.js` payload, publish it as Open Graph chunks under `dist/parseraccs`, verify SHA-256 in the loader, and cache the last working payload in `localStorage`.
 

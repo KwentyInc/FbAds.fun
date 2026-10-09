@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,50:1e3a8a,100:2dd4bf&height=190&section=header&text=ParserAccs&fontSize=64&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Facebook%20Ads%20Manager%20toolkit&descAlignY=58&descSize=18" width="100%" alt="ParserAccs">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1220,50:1e3a8a,100:2dd4bf&height=190&section=header&text=FbAds.fun&fontSize=64&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Facebook%20Ads%20Manager%20toolkit&descAlignY=58&descSize=18" width="100%" alt="FbAds.fun">
 
 [🇷🇺 Русский] | [🇺🇸 English](README_EN.md)
 
-<a href="https://fbads.fun"><img src="docs/screenshots/accounts.svg" alt="ParserAccs" width="100%" style="border-radius: 8px;"></a>
+<a href="https://fbads.fun"><img src="docs/screenshots/accounts.svg" alt="FbAds.fun" width="100%" style="border-radius: 8px;"></a>
 
 <a href="https://fbads.fun"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2DD4BF&center=true&vCenter=true&width=640&lines=%D0%A1%D0%B2%D0%BE%D0%B4%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D0%B2%D1%81%D0%B5%D0%BC%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0%D0%BC%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%BA%D0%BD%D0%B5;%D0%9F%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%D0%B0%D0%BC%D0%B8;%D0%9A%D0%BB%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%B7%D0%B0%20%D0%BF%D0%B0%D1%80%D1%83%20%D0%BA%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2;%D0%91%D0%B5%D0%B7%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B8%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8" alt="typing"></a>
 
@@ -24,7 +24,7 @@
 
 ---
 
-ParserAccs запускается прямо в Ads Manager и собирает рабочие инструменты в одном окне — без расширений, установки и серверов.
+FbAds.fun запускается прямо в Ads Manager и собирает рабочие инструменты в одном окне — без расширений, установки и серверов.
 
 | Модуль | Что делает | Доступ |
 |---|---|---|
@@ -33,14 +33,14 @@ ParserAccs запускается прямо в Ads Manager и собирает 
 | **🧬 CloneAds** | Клонирование кампаний, адсетов, объявлений и креативов между кабинетами | **Beta**, запись после подтверждения |
 
 > [!IMPORTANT]
-> ParserAccs не является продуктом Meta и не связан с Facebook. Перед массовыми изменениями проверяйте выбранные кабинеты и параметры операции.
+> FbAds.fun не является продуктом Meta и не связан с Facebook. Перед массовыми изменениями проверяйте выбранные кабинеты и параметры операции.
 
 ## ⚡ Установка за минуту
 
 1. Откройте **[fbads.fun](https://fbads.fun)**.
 2. Покажите панель закладок: `Ctrl + Shift + B` (на macOS — `⌘ + Shift + B`).
 3. Выберите язык **RU / EN**.
-4. Перетащите кнопку **📌 ParserAccs** на панель закладок.
+4. Перетащите кнопку **📌 FbAds.fun** на панель закладок.
 5. Откройте Facebook Ads Manager и нажмите закладку.
 
 Не получается перетащить? Нажмите **«Скопировать код»**, создайте обычную закладку и вставьте код в поле URL.
@@ -81,7 +81,7 @@ ParserAccs запускается прямо в Ads Manager и собирает 
 > [!NOTE]
 > Время в правилах `SCHEDULED` не сдвигается автоматически из‑за перехода на летнее время. Разница часовых поясов выводится в лог для ручной проверки.
 
-<a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820" style="border-radius: 8px;"></a>
+<a href="https://fbads.fun/docs/screenshots/autorules.svg"><img src="docs/screenshots/autorules.svg" alt="FbAds.fun AutoRules" width="820" style="border-radius: 8px;"></a>
 
 ### 🧬 CloneAds — beta
 
@@ -99,7 +99,7 @@ ParserAccs запускается прямо в Ads Manager и собирает 
 > [!WARNING]
 > Оставляйте кампании на `PAUSED`, используйте черновик и проверяйте результат в Ads Manager перед запуском. CloneAds — экспериментальный модуль: некоторые форматы могут потребовать ручной доработки.
 
-<a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820" style="border-radius: 8px;"></a>
+<a href="https://fbads.fun/docs/screenshots/cloneads.svg"><img src="docs/screenshots/cloneads.svg" alt="FbAds.fun CloneAds" width="820" style="border-radius: 8px;"></a>
 
 ## 🧰 Стек
 
@@ -114,7 +114,7 @@ ParserAccs запускается прямо в Ads Manager и собирает 
 
 ## 🌐 Языки
 
-Русский и английский. Язык выбирается на лендинге, а внутри ParserAccs переключается без перезапуска.
+Русский и английский. Язык выбирается на лендинге, а внутри FbAds.fun переключается без перезапуска.
 
 <details>
 <summary>🛠 Техническая архитектура и Разработка (Кликни, чтобы раскрыть)</summary>
@@ -133,7 +133,7 @@ manifest + Open Graph chunk
 
 В закладке хранится небольшой загрузчик, а не вся программа. При запуске он:
 
-1. получает опубликованную версию ParserAccs (manifest + chunk через Open Graph-кэш Facebook);
+1. получает опубликованную версию FbAds.fun (manifest + chunk через Open Graph-кэш Facebook);
 2. проверяет SHA-256 содержимого;
 3. сохраняет рабочую копию в `localStorage`;
 4. использует кэш, если свежая версия временно недоступна.
@@ -183,7 +183,7 @@ src/bindings.js   события, таблица и экспорт
 
 ## ☕ Поддержать проект
 
-> 💚 **ParserAccs бесплатный, с открытым кодом и без рекламы.**
+> 💚 **FbAds.fun бесплатный, с открытым кодом и без рекламы.**
 > Если инструмент экономит вам время — можно угостить автора кофе ☕
 >
 > 🟥 **USDT TRC-20 (Tron):** `TVGbahTRp8QjrU4pHxrop7VNdQ5xhoTngZ`

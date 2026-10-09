@@ -399,7 +399,7 @@
     const url = URL.createObjectURL(blob);
     const aEl = document.createElement('a');
     aEl.href = url;
-    aEl.download = 'parseraccs_clone_' + clDonorId.replace(/^act_/, '') + '_' + stampNow() + '.json';
+    aEl.download = 'fbads_clone_' + clDonorId.replace(/^act_/, '') + '_' + stampNow() + '.json';
     document.body.appendChild(aEl);
     aEl.click();
     aEl.remove();

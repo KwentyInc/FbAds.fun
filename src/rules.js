@@ -233,7 +233,7 @@
       const url = URL.createObjectURL(blob);
       const aEl = document.createElement('a');
       aEl.href = url;
-      aEl.download = 'parseraccs_rules_' + stampNow() + '.json';
+      aEl.download = 'fbads_rules_' + stampNow() + '.json';
       document.body.appendChild(aEl);
       aEl.click();
       aEl.remove();

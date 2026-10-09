@@ -172,7 +172,7 @@
     const modal = document.createElement('div');
     modal.id = 'pa-m';
     modal.style.background = '#141519';
-    modal.innerHTML = `<div class="pa-h" style="position:relative;z-index:5;background:transparent"><div style="display:flex;align-items:center;gap:16px;"><div><div style="display:flex;align-items:center;gap:10px;"><div style="font-family:'Space Grotesk',system-ui,sans-serif;font-weight:800;letter-spacing:.6px;font-size:24px;line-height:1;background:linear-gradient(92deg,#fff 0%,#2dd4bf 42%,#3b8cff 68%,#fff 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:pa-titleshift 7s linear infinite,pa-titleglow 3.4s ease-in-out infinite;">ParserAccs</div><span id="pa-ver" title="${(function () {
+    modal.innerHTML = `<div class="pa-h" style="position:relative;z-index:5;background:transparent"><div style="display:flex;align-items:center;gap:16px;"><div><div style="display:flex;align-items:center;gap:10px;"><div style="font-family:'Space Grotesk',system-ui,sans-serif;font-weight:800;letter-spacing:.6px;font-size:24px;line-height:1;background:linear-gradient(92deg,#fff 0%,#2dd4bf 42%,#3b8cff 68%,#fff 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:pa-titleshift 7s linear infinite,pa-titleglow 3.4s ease-in-out infinite;">FbAds<span style="font-size:.6em;letter-spacing:.2px">.fun</span></div><span id="pa-ver" title="${(function () {
       var L = window.__ParserAccsLoader || {};
       var r = 'Build ' + (typeof PA_BUILD !== 'undefined' ? PA_BUILD : 'dev');
       if (L.source) r += ' · loader: ' + L.source;
@@ -798,7 +798,7 @@
       const url = URL.createObjectURL(blob);
       const aEl = document.createElement('a');
       aEl.href = url;
-      aEl.download = 'parseraccs_' + stampNow() + '.csv';
+      aEl.download = 'fbads_' + stampNow() + '.csv';
       document.body.appendChild(aEl);
       aEl.click();
       aEl.remove();
