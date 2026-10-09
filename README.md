@@ -16,7 +16,7 @@
 
 ---
 
-![ParserAccs — список рекламных кабинетов](docs/screenshots/accounts.svg)
+<a href="docs/screenshots/accounts.svg?raw=true"><img src="docs/screenshots/accounts.svg" alt="ParserAccs — список рекламных кабинетов"></a>
 
 <sub>Скриншоты сделаны на демо-данных: названия, ID и суммы вымышленные.</sub>
 
@@ -69,7 +69,7 @@ ParserAccs запускается прямо на странице Ads Manager �
 
 При смене периода траты пересчитываются прямо поверх таблицы — окно закрывать не нужно:
 
-![Пересчёт трат без закрытия таблицы](docs/screenshots/recount.svg)
+<a href="docs/screenshots/recount.svg?raw=true"><img src="docs/screenshots/recount.svg" alt="Пересчёт трат без закрытия таблицы"></a>
 
 ### ⚙️ AutoRules
 
@@ -86,7 +86,7 @@ ParserAccs запускается прямо на странице Ads Manager �
 
 > Время в правилах `SCHEDULED` не сдвигается автоматически: переходы на летнее время делают фиксированное смещение небезопасным. Разница часовых поясов выводится в лог для ручной проверки.
 
-<img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820">
+<a href="docs/screenshots/autorules.svg?raw=true"><img src="docs/screenshots/autorules.svg" alt="ParserAccs AutoRules" width="820"></a>
 
 ### 🧬 CloneAds — beta
 
@@ -104,7 +104,7 @@ ParserAccs запускается прямо на странице Ads Manager �
 
 > **Рекомендуется:** оставляйте кампанию в статусе `PAUSED`, используйте draft и проверяйте кампанию, адсеты, страницы, пиксели, плейсменты, бюджеты и креативы в Ads Manager перед запуском. CloneAds экспериментальный: некоторые форматы и ограничения конкретного кабинета могут потребовать ручной доработки.
 
-<img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820">
+<a href="docs/screenshots/cloneads.svg?raw=true"><img src="docs/screenshots/cloneads.svg" alt="ParserAccs CloneAds" width="820"></a>
 
 ## 🔐 Безопасность
 
@@ -204,7 +204,7 @@ CloneAds writes through the Graph API. Keep cloned campaigns **PAUSED**, use dra
 
 | Accounts | AutoRules | CloneAds |
 |---|---|---|
-| <img src="docs/screenshots/accounts-en.svg" alt="Accounts" width="300"> | <img src="docs/screenshots/autorules.svg" alt="AutoRules" width="300"> | <img src="docs/screenshots/cloneads.svg" alt="CloneAds" width="300"> |
+| <a href="docs/screenshots/accounts-en.svg?raw=true"><img src="docs/screenshots/accounts-en.svg" alt="Accounts" width="300"></a> | <a href="docs/screenshots/autorules.svg?raw=true"><img src="docs/screenshots/autorules.svg" alt="AutoRules" width="300"></a> | <a href="docs/screenshots/cloneads.svg?raw=true"><img src="docs/screenshots/cloneads.svg" alt="CloneAds" width="300"></a> |
 
 Screenshots use demo data (fictional names, IDs and amounts).
 
